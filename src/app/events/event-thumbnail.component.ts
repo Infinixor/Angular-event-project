@@ -12,6 +12,7 @@ import { Component ,EventEmitter,Input, Output} from "@angular/core";
         <div>
             <span>Location: {{event.location.address}}</span>
             <span class=pad-left></span>
+            <!-- Interpolation -->
             <span>{{event.location.city}}, {{event.location.country}}</span>
         </div>
     </div>
