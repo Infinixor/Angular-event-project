@@ -6,23 +6,16 @@ import { Component } from '@angular/core';
     <div>
         <h1>Upcomin Angular Events</h1>    
         <hr/>
-        <h2>{{event.name}}</h2>
-        <div class="well hoverwell thumbnail">
-            <h2>{{event.name}}</h2>
-            <div>Date: {{event.date}}</div>
-            <div>Time: {{event.time}}</div>
-            <div>Price: \${{event.price}}</div>
-            <div>
-                <span>Location: {{event.location.address}}</span>
-                <span>&nbsp;</span>
-                <span>{{event.location.city}}, {{event.location.country}}</span>
-            </div>
-        </div>
+        <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"></event-thumbnail>
     </div>
+
     `
 })
 export class EventsListComponent{
-    event = {
+    handleEventClicked(data : any) {
+        console.log('recieved', data)
+    }
+    event1 = {
         id:1,
         name:'Angular Connect',
         date: '9/26/2035',
