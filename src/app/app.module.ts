@@ -17,6 +17,7 @@ import { ToastrServices } from './common/toastr.service';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
+import { LoginComponent } from './user/login.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { Error404Component } from './errors/404.component';
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
+    LoginComponent
   ],
   providers:[
     EventService,

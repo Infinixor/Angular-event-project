@@ -3,6 +3,7 @@ import { EventService } from './shared/event.service';
 //import { ToastrService } from 'ngx-toastr';
 import { ToastrServices } from '../common/toastr.service';
 import { ActivatedRoute } from '@angular/router';
+import { IEvent } from './shared/index';
 
 @Component({
     template: `
