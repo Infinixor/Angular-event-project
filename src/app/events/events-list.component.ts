@@ -24,10 +24,10 @@ import { ToastrServices } from '../common/toastr.service';
     `
 })
 export class EventsListComponent implements OnInit{
-  events: any[] = [];
+  events: any
 
   ngOnInit() {
-    this.events = this.eventService.getEvents()
+    this.eventService.getEvents().subscribe(events => {this.events = events})
   }
     constructor(private eventService : EventService,private toastr: ToastrServices){
       
