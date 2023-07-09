@@ -18,6 +18,7 @@ import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
 import { LoginComponent } from './user/login.component';
+import { AuthService } from './user/auth.service';
 
 @NgModule({
   imports: [
@@ -33,8 +34,7 @@ import { LoginComponent } from './user/login.component';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component,
-    LoginComponent
+    Error404Component
   ],
   providers:[
     EventService,
@@ -44,7 +44,8 @@ import { LoginComponent } from './user/login.component';
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
     },
-    EventListResolver
+    EventListResolver,
+    AuthService
   ],
   bootstrap: [EventsAppComponent]
 })
