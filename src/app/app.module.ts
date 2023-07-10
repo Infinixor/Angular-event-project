@@ -19,13 +19,16 @@ import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
 import { LoginComponent } from './user/login.component';
 import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
   ],
   declarations: [
     EventsAppComponent,

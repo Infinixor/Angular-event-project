@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Iuser } from "./user.model";
-import { last } from "rxjs";
 
 @Injectable()
 export class AuthService{
