@@ -14,8 +14,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrServices } from './common/toastr.service';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
+
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
@@ -41,7 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   providers:[
     EventService,
