@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl ,FormGroup, Validators } from "@angular/forms";
 import { ISession } from "../shared/index";
-
+import { restrictedWords } from "../shared/index";
 @Component({
     templateUrl: './create-session.component.html',
     styles:[`
@@ -27,7 +27,7 @@ export class CreateSessionComponent{
         this.presenter = new FormControl('',Validators.required)
         this.duration = new FormControl('',Validators.required)
         this.level = new FormControl('',Validators.required)
-        this.abstract = new FormControl('',[Validators.required ,Validators.maxLength(400)])
+        this.abstract = new FormControl('',[Validators.required ,Validators.maxLength(400),restrictedWords(['foo','bar'])])
         
         this.newSessionForm = new FormGroup({
             name:this.name,
@@ -53,4 +53,5 @@ export class CreateSessionComponent{
             }
             console.log(session)
     }
+    
 }
