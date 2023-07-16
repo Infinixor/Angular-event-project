@@ -18,12 +18,12 @@ import { EventService, ISession } from "../events";
 
 export class NavBarComponent{
     searchTerm :string=""
-    foundSessions:any;
-    eventId:any;
+    foundSessions:ISession[];
     constructor(public auth:AuthService,
         private eventService:EventService){
         
     }
+
     searchSessions(searchTerm){
         this.eventService.searchSessions(searchTerm).subscribe(sessions => {
             this.foundSessions =sessions;
