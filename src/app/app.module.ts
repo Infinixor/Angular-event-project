@@ -17,7 +17,11 @@ import { NavBarComponent } from './nav/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { JQ_TOKEN , CollapsibleWellComponent ,ToastrServices} from './common/index';
+import { JQ_TOKEN,
+  CollapsibleWellComponent,
+  ToastrServices,
+  SimpleModalComponent
+} from './common/index';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
@@ -47,6 +51,7 @@ let jQuery = window['$'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
+    SimpleModalComponent
   ],
   providers:[
     EventService,
@@ -55,6 +60,10 @@ let jQuery = window['$'];
     { 
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
+    },
+    { 
+      provide: JQ_TOKEN,
+      useValue: jQuery
     },
     EventListResolver,
     AuthService
