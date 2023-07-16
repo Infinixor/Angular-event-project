@@ -10,7 +10,8 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   DurationPipe,
-  UpvoteComponent
+  UpvoteComponent,
+  VoterService
 } from './events/index'
 import { BrowserModule } from '@angular/platform-browser';
 import { EventsAppComponent } from './events-app.component';
@@ -60,6 +61,7 @@ let jQuery = window['$'];
   providers:[
     EventService,
     ToastrServices, 
+    VoterService,
     EventRouteActivator,
     { 
       provide: 'canDeactivateCreateEvent',
