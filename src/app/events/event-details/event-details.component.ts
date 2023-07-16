@@ -16,8 +16,11 @@ import { ISession } from "../shared";
 })
 
 export class EventDetailsComponent implements OnInit {
-    event : any 
+    event : any ;
     addMode: boolean;
+
+    filterBy:string = 'all';
+    
     constructor(private eventService:EventService , private route : ActivatedRoute){
 
     }
