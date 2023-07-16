@@ -17,7 +17,8 @@ import { NavBarComponent } from './nav/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {   
+import {  
+  JQ_TOKEN, 
   CollapsibleWellComponent,
   ToastrServices,
   SimpleModalComponent,
@@ -29,8 +30,7 @@ import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-declare var $: any;  
-
+let jQuery = window['$'];
 @NgModule({
   imports: [
     BrowserModule,
@@ -62,6 +62,10 @@ declare var $: any;
     { 
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
+    },
+    { 
+      provide: JQ_TOKEN,
+      useValue: jQuery
     },
     EventListResolver,
     AuthService

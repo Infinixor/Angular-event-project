@@ -26,14 +26,14 @@ export class EventService{
       var results:ISession[]=[];
 
       EVENTS.forEach(event=>{
-        var matchingSessions=event.sessions.filter(session=>session.name.toLocaleLowerCase().indexOf(term)>-1);
+        var matchingSessions=event.sessions.filter(session=>session.name.toLocaleLowerCase().indexOf(term)> -1);
         matchingSessions = matchingSessions.map((session:any)=>{
           session.eventId=event.id;
           return session;
         })
         results = results.concat(matchingSessions);
       })
-      var emitter = new EventEmitter(true);
+      var emitter = new EventEmitter(true);//true = deliver event asynchronously 
       setTimeout(()=>{
         emitter.emit(results);
       },100);
