@@ -17,14 +17,14 @@ import { NavBarComponent } from './nav/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrServices } from './common/toastr.service';
-import { CollapsibleWellComponent } from './common/collapsible-well.component';
-
+import { JQ_TOKEN , CollapsibleWellComponent ,ToastrServices} from './common/index';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+let jQuery = window['$'];
 
 @NgModule({
   imports: [
