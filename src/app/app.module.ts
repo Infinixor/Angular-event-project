@@ -17,10 +17,11 @@ import { NavBarComponent } from './nav/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { JQ_TOKEN,
+import {   
   CollapsibleWellComponent,
   ToastrServices,
-  SimpleModalComponent
+  SimpleModalComponent,
+  ModalTriggerDirective,
 } from './common/index';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
@@ -28,7 +29,7 @@ import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-let jQuery = window['$'];
+declare var $: any;  
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ let jQuery = window['$'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective,
   ],
   providers:[
     EventService,
@@ -60,10 +62,6 @@ let jQuery = window['$'];
     { 
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
-    },
-    { 
-      provide: JQ_TOKEN,
-      useValue: jQuery
     },
     EventListResolver,
     AuthService

@@ -26,7 +26,7 @@ export class EventService{
       var results:ISession[]=[];
 
       EVENTS.forEach(event=>{
-        var matchingSessions=event.sessions.filter(sessions=>sessions.name.toLocaleLowerCase().indexOf(term)>-1);
+        var matchingSessions=event.sessions.filter(session=>session.name.toLocaleLowerCase().indexOf(term)>-1);
         matchingSessions = matchingSessions.map((session:any)=>{
           session.eventId=event.id;
           return session;
