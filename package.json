@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@babel/core": "^7.23.5",
     "bootstrap": "^5.3.0",
     "jquery": "^3.7.0",
     "ngf-bootstrap": "^0.0.5",
